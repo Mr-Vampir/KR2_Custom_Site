@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="js/java.js"></script>
+  <title>Ремонт ноутбуков</title>
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header class="site-header">
+    <div class="header-top">
+      <div class="header-container top-bar-content">
+        <a href="main.html" class="brand-logo">
+          <!-- Укажите здесь путь к вашему PNG-файлу -->
+          <img src="images/logo.png" alt="Логотип CoreFix" class="logo-img">
+          <span class="logo-text">CoreFix</span>
+        </a>
+        <div class="work-info">
+          Сервисный центр в Москве · ежедневно 08:00–23:00
+        </div>
+      </div>
+    </div>
+    <div class="header-container">
+      <nav class="header-nav">
+        <a href="main.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-text">Главная</span></a>
+        <a href="comps.html" class="nav-item"><span class="nav-icon">🖥️</span><span class="nav-text">Ремонт
+            ПК</span></a>
+        <a href="laptops.html" class="nav-item active"><span class="nav-icon">💻</span><span
+            class="nav-text">Ноутбуки</span></a>
+        <a href="services.html" class="nav-item"><span class="nav-icon">⚙</span><span
+            class="nav-text">Обслуживание</span></a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">
+    <!-- БЛОК 1: Вводный экран и интерактивный расчёт поломки ноутбука -->
+    <section class="split-section">
+      <div class="left-column">
+        <h1>Ремонт ноутбуков любых брендов в Москве</h1>
+        <p>Восстанавливаем работоспособность ноутбуков Asus, Lenovo, HP, Acer, MSI, Apple MacBook и других марок.
+          Устраняем перегрев, последствия залития, проблемы с зарядкой и разбитыми экранами.</p>
+        <p>Большинство модульных ремонтов выполняем у вас дома за один визит, а сложную пайку цепей питания — в
+          оснащённой мастерской с бесплатной доставкой.</p>
+        <div class="features-mini">
+          <div class="feat-item">🔧 Оригинальные запчасти</div>
+          <div class="feat-item">⚡ Выезд за 1 час</div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="interactive-box">
+          <h3>Что случилось с ноутбуком?</h3>
+          <div class="calc-services">
+            <label class="calc-item">
+              <input type="checkbox" value="1100" checked onchange="calculateTotal()">
+              <span>Сильно греется, шумит или троттлит</span>
+              <span class="price">от 1 100 ₽</span>
+            </label>
+            <label class="calc-item">
+              <input type="checkbox" value="1400" onchange="calculateTotal()">
+              <span>Не заряжается / расшатан разъём питания</span>
+              <span class="price">от 1 400 ₽</span>
+            </label>
+            <label class="calc-item">
+              <input type="checkbox" value="1500" onchange="calculateTotal()">
+              <span>Попала жидкость на клавиатуру</span>
+              <span class="price">от 1 500 ₽</span>
+            </label>
+            <label class="calc-item">
+              <input type="checkbox" value="1200" onchange="calculateTotal()">
+              <span>Разбит экран (матрица) или петли корпуса</span>
+              <span class="price">от 1 200 ₽</span>
+            </label>
+          </div>
+          <div class="calc-total">
+            <span>Ориентировочно:</span>
+            <span id="laptop-total-price">1 100 ₽</span>
+          </div>
+          <button class="action-btn" onclick="showNotification('Заявка на расчет отправлена!')">Оставить заявку</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- БЛОК 2: 6 карточек услуг по ноутбукам с вызовом модального окна -->
+    <section class="services-section">
+      <h2 class="section-title-center">Услуги по ремонту ноутбуков</h2>
+      <div class="services-container">
+
+        <!-- Карточка 1 -->
+        <div class="service-card card-laptop-screen">
+          <div class="card-content">
+            <h3 class="card-title">Замена экрана (матрицы)</h3>
+            <div class="card-price">от 1200 руб.</div>
+            <p class="card-desc">Установка оригинальных дисплеев IPS и OLED для любых моделей ноутбуков с сохранением яркости и цветопередачи.</p>
+            <button class="card-btn" onclick="openServiceModal('Замена экрана (матрицы) ноутбука')">Оставить
+              заявку</button>
+          </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="service-card card-laptop-keyboard">
+          <div class="card-content">
+            <h3 class="card-title">Замена клавиатуры</h3>
+            <div class="card-price">от 900 руб.</div>
+            <p class="card-desc">Замена залитых или неработающих клавиш, в том числе с подсветкой и перепайкой пластиковых заклёпок топкейса.</p>
+            <button class="card-btn" onclick="openServiceModal('Замена клавиатуры ноутбука')">Оставить заявку</button>
+          </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="service-card card-laptop-cooling">
+          <div class="card-content">
+            <h3 class="card-title">Чистка от пыли и термопаста</h3>
+            <div class="card-price">от 1100 руб.</div>
+            <p class="card-desc">Устранение перегрева и троттлинга: полная разборка системы охлаждения и нанесение термопасты с фазовым переходом.</p>
+            <button class="card-btn" onclick="openServiceModal('Чистка ноутбука от пыли и замена термопасты')">Оставить
+              заявку</button>
+          </div>
+        </div>
+
+        <!-- Карточка 4 -->
+        <div class="service-card card-laptop-water">
+          <div class="card-content">
+            <h3 class="card-title">Ремонт после залития</h3>
+            <div class="card-price">от 1500 руб.</div>
+            <p class="card-desc">Срочная ультразвуковая чистка материнской платы от окислов, восстановление цепей питания и спасение данных.</p>
+            <button class="card-btn" onclick="openServiceModal('Восстановление ноутбука после залития')">Оставить
+              заявку</button>
+          </div>
+        </div>
+
+        <!-- Карточка 5 -->
+        <div class="service-card card-laptop-battery">
+          <div class="card-content">
+            <h3 class="card-title">Замена батареи и разъёмов</h3>
+            <div class="card-price">от 800 руб.</div>
+            <p class="card-desc">Установка новых аккумуляторов с реальной ёмкостью и перепайка расшатанных разъёмов питания Type-C или штекера.</p>
+            <button class="card-btn" onclick="openServiceModal('Замена аккумулятора или разъёма питания')">Оставить
+              заявку</button>
+          </div>
+        </div>
+
+        <!-- Карточка 6 -->
+        <div class="service-card card-laptop-upgrade">
+          <div class="card-content">
+            <h3 class="card-title">Апгрейд (SSD и память)</h3>
+            <div class="card-price">от 700 руб.</div>
+            <p class="card-desc">Ускорение работы ноутбука в 3–5 раз за счёт установки скоростного NVMe SSD-диска и расширения оперативной памяти.</p>
+            <button class="card-btn" onclick="openServiceModal('Апгрейд ноутбука (установка SSD и ОЗУ)')">Оставить
+              заявку</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- Блок 2: FAQ Аккордеон (Текст слева / Интерактив справа) -->
+    <section class="split-section reverse-mobile">
+      <div class="left-column">
+        <h2>Ответы на популярные вопросы клиентов</h2>
+        <p>Мы заботимся о вашем комфорте, поэтому детально описали все нюансы предоставления гарантии, приезда мастеров
+          и взаимодействия с нашим складом запчастей.</p>
+        <p>Около 90% всех программных и аппаратных неисправностей устраняются мастером непосредственно в день обращения
+          прямо у вас на глазах. Вам не придется расставаться со своей техникой на долгие дни.</p>
+      </div>
+
+      <div class="right-column">
+        <div class="interactive-box faq-box">
+          <details class="faq-item" open>
+            <summary class="faq-question">Действительно ли выезд и диагностика бесплатны?</summary>
+            <div class="faq-answer">Да, визит мастера и комплексное тестирование проводятся бесплатно при условии
+              последующего ремонта в нашем сервисе. Если вы решите отказаться от ремонта после осмотра, оплачивается
+              только фиксированная стоимость тестирования (от 500 рублей).</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Может ли цена измениться в процессе ремонта?</summary>
+            <div class="faq-answer">Исключено. Итоговая сумма фиксируется в самом начале, состоит из стоимости работы и
+              нужных деталей. Специалист приступает к манипуляциям только после оглашения точной причины и получения
+              вашего согласия.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Какие запчасти используются и нужно ли покупать их самому?</summary>
+            <div class="faq-answer">У нас есть собственный склад сертифицированных запасных частей — оригиналы и
+              проверенные аналоги. Выбираем под ваш бюджет. Но если вы уже купили деталь сами, мастер без проблем
+              установит её, взяв деньги только за монтаж.</div>
+          </details>
+          <details class="faq-item">
+            <summary class="faq-question">Как подтверждается гарантия на выполненные работы?</summary>
+            <div class="faq-answer">По окончании ремонта специалист оформляет и передает вам акт выполненных работ
+              (гарантийный талон). Если в течение срока гарантии (от 3 месяцев до 1 года) поломка повторится, мы
+              устраним её бесплатно в приоритетном порядке.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+    <!-- Блок 3: Быстрая связь (Текст слева / Интерактив справа) -->
+    <section class="split-section">
+      <div class="left-column">
+        <h2>Оформите заявку удобным способом</h2>
+        <p>Вы можете позвонить оператору напрямую по телефону <strong style="color:#ffffff;">+7 925 918-58-14</strong>.
+          Он выслушает проблему, сориентирует по стоимости и согласует время визита.</p>
+        <p>Также вы можете написать нам в мессенджеры WhatsApp и Telegram. Это удобно: отправляйте фотографии
+          поврежденных узлов, скриншоты или видео с кодами системных ошибок, чтобы мастер заранее взял нужные детали со
+          склада.</p>
+      </div>
+
+      <div class="right-column">
+        <div class="interactive-box form-box">
+          <h3>Быстрая заявка на выезд</h3>
+          <form onsubmit="event.preventDefault(); alert('Менеджер перезвонит вам в течение 10 минут!');">
+            <input type="text" placeholder="Ваше имя" required class="form-input">
+            <input type="tel" placeholder="+7 (___) ___-__-__" required class="form-input">
+
+            <div class="messenger-select">
+              <span class="label-text">Где ответить:</span>
+              <label><input type="radio" name="messenger" value="phone" checked> 📞 Звонок</label>
+              <label><input type="radio" name="messenger" value="tg"> ✈ Telegram</label>
+              <label><input type="radio" name="messenger" value="wa"> 💬 WhatsApp</label>
+            </div>
+
+            <button type="submit" class="action-btn text-center">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Подвал сайта (Footer) -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Верхняя часть футера -->
+      <div class="footer-main">
+        <!-- Левая колонка: Бренд и описание -->
+        <div class="footer-brand">
+          <h3 class="footer-logo">CoreFix</h3>
+          <p>Профессиональный компьютерный сервис в Москве. Быстрый выезд мастера на дом и в офис с гарантией на все
+            виды работ.</p>
+        </div>
+
+        <!-- Центральная колонка: Контакты для связи -->
+        <div class="footer-contacts">
+          <h4>Связаться</h4>
+          <a href="mailto:support@corefix.ru" class="footer-link">support@corefix.ru</a>
+          <a href="tel:+79259185814" class="footer-link">+7 (925) 918-58-14</a>
+          <p class="footer-schedule">Ежедневно, 08:00–23:00</p>
+          <div class="footer-messengers">
+            <a href="https://t.me/MrVampir" class="msg-badge">Telegram</a>
+            <a href="https://vk.ru/vampir_dkdt" class="msg-badge">ВКонтакте</a>
+          </div>
+        </div>
+
+        <!-- Правая колонка: Юридическая инфо и кнопка -->
+        <div class="footer-info">
+          <h4>Сервисный центр</h4>
+          <p>Москва, выезд во все районы</p>
+          <p>Срочный ремонт — от 40 минут</p>
+          <a href="#order-form" class="footer-cta-btn">Вызвать мастера</a>
+        </div>
+      </div>
+
+      <!-- Нижняя полоса: Копирайт и кнопка "Наверх" -->
+      <div class="footer-bottom">
+        <p class="copyright">© 2026 CoreFix. Все права защищены.</p>
+        <button class="scroll-top-btn" onclick="scrollToTop()" title="Вернуться наверх">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+            <polyline points="18 21 12 15 6 21"></polyline>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+  <!-- Модальное окно заявки (единое для всех кнопок на странице) -->
+  <div id="serviceModal" class="modal-overlay" onclick="closeModalOnBg(event)">
+    <div class="modal-window">
+      <button class="modal-close" onclick="closeServiceModal()" title="Закрыть">&times;</button>
+      <h3>Оставить заявку</h3>
+      <p class="modal-subtitle">Выбранная услуга: <strong id="selectedServiceText" style="color: #3b82f6;">Ремонт
+          ноутбука</strong></p>
+
+      <form onsubmit="submitModalForm(event)">
+        <input type="hidden" id="selectedServiceInput" name="service">
+        <input type="text" placeholder="Ваше имя" required class="form-input">
+        <input type="tel" placeholder="+7 (___) ___-__-__" required class="form-input">
+        <textarea placeholder="Укажите модель ноутбука и описание проблемы" rows="3" class="form-input"
+          style="resize: vertical;"></textarea>
+        <button type="submit" class="action-btn" style="margin-top: 10px;">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
