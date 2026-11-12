@@ -224,52 +224,43 @@
       </div>
     </section>
   </main>
-  <!-- Подвал сайта (Footer) -->
-  <footer class="site-footer">
-    <div class="footer-container">
-      <!-- Верхняя часть футера -->
-      <div class="footer-main">
-        <!-- Левая колонка: Бренд и описание -->
-        <div class="footer-brand">
-          <h3 class="footer-logo">CoreFix</h3>
-          <p>Профессиональный компьютерный сервис в Москве. Быстрый выезд мастера на дом и в офис с гарантией на все
-            виды работ.</p>
-        </div>
-
-        <!-- Центральная колонка: Контакты для связи -->
-        <div class="footer-contacts">
-          <h4>Связаться</h4>
-          <a href="mailto:support@corefix.ru" class="footer-link">support@corefix.ru</a>
-          <a href="tel:+79259185814" class="footer-link">+7 (925) 918-58-14</a>
-          <p class="footer-schedule">Ежедневно, 08:00–23:00</p>
-          <div class="footer-messengers">
-            <a href="https://t.me/MrVampir" class="msg-badge">Telegram</a>
-            <a href="https://vk.ru/vampir_dkdt" class="msg-badge">ВКонтакте</a>
-          </div>
-        </div>
-
-        <!-- Правая колонка: Юридическая инфо и кнопка -->
-        <div class="footer-info">
-          <h4>Сервисный центр</h4>
-          <p>Москва, выезд во все районы</p>
-          <p>Срочный ремонт — от 40 минут</p>
-          <a href="#order-form" class="footer-cta-btn">Вызвать мастера</a>
-        </div>
-      </div>
-
-      <!-- Нижняя полоса: Копирайт и кнопка "Наверх" -->
-      <div class="footer-bottom">
-        <p class="copyright">© 2026 CoreFix. Все права защищены.</p>
-        <button class="scroll-top-btn" onclick="scrollToTop()" title="Вернуться наверх">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-            <polyline points="18 21 12 15 6 21"></polyline>
-          </svg>
-        </button>
-      </div>
+<div class="footer-main">
+    <!-- Левая колонка: Бренд и описание -->
+    <div class="footer-brand">
+        <h3 class="footer-logo">CoreFix</h3>
+        <p>Профессиональный компьютерный сервис в Москве. Быстрый выезд мастера на дом и в офис с гарантией на все виды работ.</p>
     </div>
-  </footer>
+
+    <!-- Навигация (как на примере) -->
+    <div class="footer-nav">
+        <h4>Навигация</h4>
+        <a href="index.html" class="footer-link">Главная</a>
+        <a href="comps.html" class="footer-link">Ремонт ПК</a>
+        <a href="laptops.html" class="footer-link">Ноутбуки</a>
+        <a href="services.html" class="footer-link">Обслуживание</a>
+        <a href="index.html#how-we-work" class="footer-link">Как мы работаем</a>
+    </div>
+
+    <!-- Колонка: Контакты для связи -->
+    <div class="footer-contacts">
+        <h4>Связаться</h4>
+        <a href="mailto:support@corefix.ru" class="footer-link">support@corefix.ru</a>
+        <a href="tel:+79259185814" class="footer-link">+7 (925) 918-58-14</a>
+        <p class="footer-schedule">Ежедневно, 08:00–23:00</p>
+        <div class="footer-messengers">
+            <a href="#" class="msg-badge">Telegram</a>
+            <a href="#" class="msg-badge">WhatsApp</a>
+        </div>
+    </div>
+
+    <!-- Правая колонка: Информация -->
+    <div class="footer-info">
+        <h4>Сервисный центр</h4>
+        <p>Москва, выезд во все районы</p>
+        <p>Срочный ремонт — от 40 минут</p>
+        <a href="#order-form" class="footer-cta-btn">Вызвать мастера</a>
+    </div>
+</div>
   <!-- Модальное окно заявки -->
   <div id="serviceModal" class="modal-overlay" onclick="closeModalOnBg(event)">
     <div class="modal-window">
