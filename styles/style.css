@@ -1027,6 +1027,33 @@ button.card-btn {
     padding: 10px 16px;
     font-size: 13px;
 }
+.footer-brand {
+    max-width: 280px;
+}
+
+/* Добавляем .footer-nav к общим правилам выравнивания колонок */
+.footer-nav,
+.footer-contacts,
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-nav h4,
+.footer-contacts h4,
+.footer-info h4 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+/* Чуть увеличиваем отступ между пунктами меню в футере, как на скриншоте */
+.footer-nav .footer-link {
+    margin-bottom: 12px;
+}
 
 
 
