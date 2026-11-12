@@ -5,28 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/style.css">
+  <link href="https://unpkg.com" rel="stylesheet">
   <script src="js/java.js"></script>
+  <script src="https://unpkg.com/@barba/core"></script>
   <title>Ремонт компьютеров</title>
 </head>
 
-<body>
+<body data-barba="wrapper">
   <!-- Шапка сайта -->
   <header class="site-header">
     <div class="header-top">
       <div class="header-container top-bar-content">
         <a href="index.html" class="brand-logo">
           <!-- Укажите здесь путь к вашему PNG-файлу -->
-          <img src="images/logo.png" alt="Логотип CoreFix" class="logo-img">
+          <img src="images/logo.jpg" alt="Логотип CoreFix" class="logo-img">
           <span class="logo-text">CoreFix</span>
         </a>
-        <div class="work-info">
-          Сервисный центр в Москве · ежедневно 08:00–23:00
+        <div></div>
+        <div class="header-top-right">
+            <span class="work-info">Сервисный центр в Москве • Ежедневно 09:00 – 21:00</span>
+            <button type="button" class="theme-toggle-btn" title="Сменить тему">☀️</button>
         </div>
       </div>
     </div>
-    <div class="header-container">
+    <div class="header-bottom">
       <nav class="header-nav">
-        <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span class="nav-text">Главная</span></a>
+        <a href="index.html" class="nav-item"><span class="nav-icon">🏠</span><span
+            class="nav-text">Главная</span></a>
         <a href="comps.html" class="nav-item active"><span class="nav-icon">🖥️</span><span class="nav-text">Ремонт
             ПК</span></a>
         <a href="laptops.html" class="nav-item"><span class="nav-icon">💻</span><span
@@ -36,6 +41,10 @@
       </nav>
     </div>
   </header>
+
+  <!-- Тело сайта-->
+     <div class="barba-perspective-wrapper">
+    <div data-barba="container" data-barba-namespace="home" class="barba-page-container">
   <main class="main-content">
     <!-- Блок 1: Вводный экран страницы ремонта ПК (Текст слева / Интерактивный выбор поломки справа) -->
     <section class="split-section">
@@ -89,7 +98,8 @@
     <div class="services-container">
         
         <!-- Карточка 1 -->
-        <div class="service-card card-repair">
+        <div class="service-card product-card" data-aos="fade-up"">
+              <img src="images/repair.jpg" alt="Ремонт компьютеров" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Ремонт компьютеров</h3>
                 <div class="card-price">от 600 руб.</div>
@@ -99,7 +109,8 @@
         </div>
 
         <!-- Карточка 2 -->
-        <div class="service-card card-maintenance">
+        <div class="service-card product-card" data-aos="fade-up"">
+                       <img src="images/maintenance.jpg" alt="Обслуживание компьютеров" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Обслуживание компьютеров</h3>
                 <div class="card-price">от 650 руб.</div>
@@ -109,7 +120,8 @@
         </div>
 
         <!-- Карточка 3 -->
-        <div class="service-card card-assembly">
+        <div class="service-card product-card" data-aos="fade-up"">
+          <img src="images/assembly.jpg" alt="Сборка компьютеров" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Сборка компьютеров</h3>
                 <div class="card-price">от 1500 руб.</div>
@@ -119,7 +131,8 @@
         </div>
 
         <!-- Карточка 4 -->
-        <div class="service-card card-help">
+        <div class="service-card product-card" data-aos="fade-up"">
+          <img src="images/help.jpg" alt="Компьютерная помощь" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Компьютерная помощь</h3>
                 <div class="card-price">от 500 руб.</div>
@@ -129,7 +142,8 @@
         </div>
 
         <!-- Карточка 5 -->
-        <div class="service-card card-windows">
+        <div class="service-card product-card" data-aos="fade-up"">
+          <img src="images/windows.jpg" alt="Установка Windows" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Установка Windows</h3>
                 <div class="card-price">от 900 руб.</div>
@@ -139,7 +153,8 @@
         </div>
 
         <!-- Карточка 6 -->
-        <div class="service-card card-programs">
+        <div class="service-card product-card" data-aos="fade-up"">
+          <img src="images/programs.jpg" alt="Установка программ" class="card-bg">
             <div class="card-content">
                 <h3 class="card-title">Установка программ</h3>
                 <div class="card-price">от 450 руб.</div>
@@ -150,9 +165,6 @@
 
     </div>
 </section>
-
-
-      </div>
     </section>
     <!-- Блок 2: FAQ Аккордеон (Текст слева / Интерактив справа) -->
     <section class="split-section reverse-mobile">
@@ -224,6 +236,9 @@
       </div>
     </section>
   </main>
+     </div>
+     </div>
+     
   <!-- Подвал сайта (Footer) -->
   <footer class="site-footer">
     <div class="footer-container">
@@ -294,6 +309,15 @@
       </form>
     </div>
   </div>
+    <script src="https://unpkg.com"></script>
+  <script>
+    AOS.init({
+      duration: 600, // Длительность анимации в миллисекундах
+      once: true     // Анимация сработает только один раз при прокрутке вниз
+    });
+  </script>
+</body>
+
 </body>
 
 </html>
